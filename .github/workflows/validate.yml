@@ -1,0 +1,24 @@
+name: Validate Issue Content
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  issues: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Parse Issue
+        uses: content-queue/parse@main
+        id: parse
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          failOnValidationError: false
+      - name: Report validation errors if needed
+        uses: content-queue/report-validation@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          validationErrors: ${{ steps.parse.outputs.validationErrors }}
