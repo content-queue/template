@@ -49,6 +49,7 @@ information on how to sign up and how to create a new app in [their documentatio
 You can do this by clicking the "Set up" button in the "User authentication settings" on the app settings page and then choosing
 the right permissions (we are using OAuth 1.0a only!). For the `Callback URI` you can specify `https://example.com`, this is
 not used.
+
 ## Add credentials to GitHub Actions Secrets
 
 As you now have set up the Twitter App, you can get the credentials to use. Go to your repository settings, click on
