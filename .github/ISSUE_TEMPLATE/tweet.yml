@@ -1,0 +1,21 @@
+name: Tweet Suggestion
+description: Suggest a new tweet
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this suggestion! Once submitted we will review it and publish it if everything is okay.
+  - type: input
+    id: description
+    attributes:
+      label: Content Description
+      description: What is this tweet about? Please describe the purpose in detail. This part will not be part of the tweet!
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: Content
+      description: This is the content that will be published. Make sure that it will fit in the limitations of length of a post!
+    validations:
+      required: true
