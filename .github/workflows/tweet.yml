@@ -1,0 +1,29 @@
+name: Tweet
+
+on:
+  project_card:
+    types: [moved]
+
+permissions:
+  issues: write
+  repository-projects: write
+
+jobs:
+  tweet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Parse Issue
+        uses: content-queue/parse@main
+        id: parse
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Tweet
+        uses: content-queue/tweet@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          cardContent: ${{ steps.parse.outputs.cardContent }}
+          doneColumn: Tweeted
+          twitterApiKey: ${{ secrets.TWITTER_CONSUMER_KEY }}
+          twitterApiSecret: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+          twitterAccessToken: ${{ secrets.TWITTER_ACCESS_TOKEN_KEY }}
+          twitterAccessSecret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
