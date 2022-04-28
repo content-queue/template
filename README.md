@@ -32,7 +32,7 @@ There are several parts to the `tweet.yml` workflow, such as parsing the tweet, 
 Some of these steps will need configuration to reflect which project column to use for published issues and the
 Twitter credentials. The credentials are taken from the GitHub Actions secrets. We will set these up further down.
 
-### Create Board
+## Create a Board
 
 Currently we do not automatically create a board for you. Create a new board through the GitHub Projects UI. You can
 choose your own name, but you will need to make sure that the workflow inputs (see above) are correctly reflecting your
