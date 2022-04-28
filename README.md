@@ -16,8 +16,6 @@ The `add-issue.yml` workflow runs every time a new issue gets created in your re
 the issue to the project in the right column. You can define which project and column to use in your repository
 by specifying `project` and `column` respectively.
 
-Currently this needs a GitHub Personal Access Token to work. See below for more info on naming.
-
 ### Remove issue
 
 Sometimes issues get closed without being tweeted. This could for example be if an idea gets rejected, or an old
@@ -60,13 +58,6 @@ tab of your Twitter App in the Twitter Developer Portal. **Make sure that the Au
 | TWITTER_CONSUMER_SECRET      | Consumer Keys -> API Secret                   | Yes      |
 | TWITTER_ACCESS_TOKEN_KEY     | Authentication Tokens -> Access Token         | Yes      |
 | TWITTER_ACCESS_TOKEN_SECRET  | Authentication Tokens -> Access Token Secret  | Yes      |
-
-Additionally to this, you need the following secrets:
-
-| Secret Name       | Secret value                                                                                                             | Required |
-|-------------------|--------------------------------------------------------------------------------------------------------------------------|----------|
-| GHPROJECT_TOKEN   | GitHub Personal Access Token, created through GitHub Settings -> Developer Settings. This token needs the "repo" scope.  | Yes      |
-
 
 ## Test it
 
