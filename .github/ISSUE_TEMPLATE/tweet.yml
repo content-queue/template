@@ -5,17 +5,17 @@ body:
     attributes:
       value: |
         Thanks for taking the time to fill out this suggestion! Once submitted we will review it and publish it if everything is okay.
-  - type: input
+  - type: textarea
     id: description
     attributes:
       label: Content Description
-      description: What is this tweet about? Please describe the purpose in detail. This part will not be part of the tweet!
+      description: What is this tweet about? Please describe the purpose in detail. This will not be part of the tweet!
     validations:
       required: true
   - type: textarea
     id: content
     attributes:
       label: Content
-      description: This is the content that will be published. Make sure that it will fit in the limitations of length of a post!
+      description: This is the content that will be published. Make sure that it will fit in the limitations of length of a tweet!
     validations:
       required: true
