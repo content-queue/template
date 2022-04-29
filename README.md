@@ -45,12 +45,17 @@ You need to create a Twitter App to get the credentials to use their API. This w
 need to sign up for a developer account with the account you intend to use with the `content-queue`. You can find more
 information on how to sign up and how to create a new app in [their documentation](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api).
 
+**Make sure that the Authentication Tokens have "Read and Write" permissions!**
+You can do this by clicking the "Set up" button in the "User authentication settings" on the app settings page and then choosing
+the right permissions (we are using OAuth 1.0a only!). For the `Callback URI` you can specify `https://example.com`, this is
+not used.
+
 ## Add credentials to GitHub Actions Secrets
 
 As you now have set up the Twitter App, you can get the credentials to use. Go to your repository settings, click on
 "Secrets" in the sidebar and then choose "Actions". Now you can add new secrets through the "New repository secret"
 button on the top right. You will need the following secrets. You can find all of these in the "Keys and tokens"
-tab of your Twitter App in the Twitter Developer Portal. **Make sure that the Authentication Tokens have "Read and Write" permissions!**
+tab of your Twitter App in the Twitter Developer Portal.
 
 | Secret Name                  | Secret value                                  | Required |
 |------------------------------|-----------------------------------------------|----------|
