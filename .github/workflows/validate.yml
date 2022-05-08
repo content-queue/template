@@ -16,9 +16,14 @@ jobs:
         id: parse
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Validate Issue
+        uses: content-queue/validate-tweet@main
+        id: validate
+        with:
+          cardContent: ${{ steps.parse.outputs.cardContent }}
           failOnValidationError: false
       - name: Report validation errors if needed
         uses: content-queue/report-validation@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          validationErrors: ${{ steps.parse.outputs.validationErrors }}
+          validationErrors: ${{ steps.validate.outputs.validationErrors }}

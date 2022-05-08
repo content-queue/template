@@ -17,6 +17,10 @@ jobs:
         id: parse
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Validate Tweet
+        uses: content-queue/validate-tweet@main
+        with:
+          cardContent: ${{ steps.parse.outputs.cardContent }}
       - name: Tweet
         uses: content-queue/tweet@main
         with:
